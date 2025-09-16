@@ -18,6 +18,6 @@ int main()
 	std::cout << "|  |  |  |  ||     ||  |  ||   [_ |  O  ||     ||     ||     \\" << std::endl;
 	std::cout << "|  |  |  |  ||     ||  |  ||     ||     ||     ||     ||  .  |" << std::endl;
 	std::cout << "|__|  |__|__| \\___/ |__|__||_____||_____| \\___/  \\___/ |__|\\_|" << std::endl;
-	std::cout << "                                                              " << std::endl;
+	std::cout << std::endl;
 	book.printOptions();
 }

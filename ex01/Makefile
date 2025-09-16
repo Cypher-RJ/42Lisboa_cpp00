@@ -1,9 +1,9 @@
 NAME	=	PhoneBook
 
 CC		=	@c++ -Wall -Werror -Wextra -std=c++98
-RM		=	rm -f
+RM		=	@rm -f
 
-FILES	=	Contact.cpp PhoneBook.cpp \
+FILES	=	Contact.cpp PhoneBook.cpp  main.cpp\
 
 SRCS	=	$(FILES)
 
@@ -12,13 +12,21 @@ OBJ		=	$(SRCS:.cpp=.o)
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-			@$(CC) $(OBJ) -o $(NAME)
-			@echo "\033[1;32m$(NAME) created.\033[0m"
+			@ $(CC) $(OBJ) -o $(NAME)
+			@ echo "\033[1;32m$(NAME) created.\033[0m"
+
+%.o: %.cpp
+			@ $(CC) -c $< -o $@
+
+clean:
+			@ $(RM) $(OBJ)
+			@ echo "\033[1;31m$(OBJ) deleted.\033[0m"
 
 fclean:
-			@$(RM) $(NAME)
-			@echo "\033[1;31m$(NAME) deleted.\033[0m"
+			@ $(RM) $(NAME)
+			@ $(RM) $(OBJ)
+			@ echo "\033[1;31m$(NAME) deleted.\033[0m"
 
 re:			fclean all
 
-.PHONY:		all fclean re
+.PHONY:		all clean fclean re

@@ -13,9 +13,11 @@ class PhoneBook
 	public:
 		PhoneBook();
 		void printOptions();
-		void printSearch();
+		int	printSearch();
 		void exitBook();
 		std::string fixInfo(const std::string& info, size_t w);
+		bool isValidNumber(const std::string& str);
+		void displayContactDetails(int index);
 
 	private:
 		Contact _contacts[8];

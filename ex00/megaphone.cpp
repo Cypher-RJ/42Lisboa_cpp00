@@ -6,7 +6,7 @@
 /*   By: rcesar-d <rcesar-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 13:48:37 by rcesar-d          #+#    #+#             */
-/*   Updated: 2025/09/15 10:37:01 by rcesar-d         ###   ########.fr       */
+/*   Updated: 2025/10/01 13:29:48 by rcesar-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int main(int ac, char **av)
 	{
 		for(size_t j = 0; av[i][j]; j++)
 			av[i][j] = std::toupper(av[i][j]);
-		std::cout << (av[i]) << std::endl;
+		std::cout << (av[i]);
 	}
+	std::cout << std::endl;
 	return(0);
 }

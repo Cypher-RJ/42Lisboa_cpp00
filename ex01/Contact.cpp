@@ -27,6 +27,15 @@ void Contact::addFirstName()
 		std::cout << "\033[1;31mField cannot be empty!\033[0m" << std::endl;
 		addFirstName();
 	}
+	for (size_t i = 0; i < _firstName.length(); i++)
+	{
+		if(!isalpha(_firstName[i]))
+		{
+			std::cout << "\033[1;31mFirst Name is invalid!\033[0m" << std::endl;
+			addFirstName();
+		}
+	}
+	
 }
 
 void Contact::addLastName()
@@ -38,6 +47,14 @@ void Contact::addLastName()
 		std::cout << "\033[1;31mField cannot be empty!\033[0m" << std::endl;
 		addLastName();
 	}
+	for (size_t i = 0; i < _lastName.length(); i++)
+	{
+		if(!isalpha(_lastName[i]))
+		{
+			std::cout << "\033[1;31mLast Name is invalid!\033[0m" << std::endl;
+			addLastName();
+		}
+	}
 }
 
 void Contact::addNickname()
@@ -48,6 +65,14 @@ void Contact::addNickname()
 	{
 		std::cout << "\033[1;31mField cannot be empty!\033[0m" << std::endl;
 		addNickname();
+	}
+	for (size_t i = 0; i < _nickname.length(); i++)
+	{
+		if(isspace(_nickname[i]))
+		{
+			std::cout << "\033[1;31mNickname Name is invalid!\033[0m" << std::endl;
+			addNickname();
+		}
 	}
 }
 
@@ -67,7 +92,7 @@ void Contact::addPhoneNumber()
 	}
 	for (size_t i = 1; i < _phoneNumber.length(); i++)
 	{
-		if(!std::isdigit(_phoneNumber[i]))
+		if(!isdigit(_phoneNumber[i]))
 		{
 			std::cout << "\033[1;31mInvalid Phone Number!\033[0m" << std::endl;
 			addPhoneNumber();

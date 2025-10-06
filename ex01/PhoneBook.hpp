@@ -8,6 +8,8 @@
 # include <cctype>
 # include "Contact.hpp"
 
+# define MAX_CONTACTS 3
+
 class PhoneBook
 {
 	public:
@@ -20,7 +22,7 @@ class PhoneBook
 		void displayContactDetails(int index);
 
 	private:
-		Contact _contacts[8];
+		Contact _contacts[MAX_CONTACTS];
 		int _contactCount;
 };
 

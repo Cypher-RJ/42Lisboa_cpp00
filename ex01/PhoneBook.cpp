@@ -12,8 +12,8 @@ void PhoneBook::printOptions()
 	std::getline(std::cin, option);
 	if(option == "ADD" || option == "1")
 	{
-		_contacts[i % 8].printAdd();
-		if (_contactCount < 8)
+		_contacts[i % MAX_CONTACTS].printAdd();
+		if (_contactCount < MAX_CONTACTS)
 			_contactCount++;
 		i++;
 		printOptions();
@@ -49,7 +49,6 @@ int PhoneBook::printSearch()
 		std::cout << "Redirecting, please wait..." << std::endl;
 		system("sleep 2");
 		system("clear");
-		printOptions();
 		return (1);
 	}
 	std::cout << std::right << std::setw(10) << "Index" << "|";
